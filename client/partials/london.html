@@ -1,0 +1,73 @@
+
+
+<link rel="stylesheet" href="css/animation.css">
+<table class="table">
+	<tr>
+		<td>
+			<div class="banner" ng-controller="AnimationCtrl">
+                <h3>Image animation example using AngularJS</h3>
+                <input type="button" ng-click="myImgClass='fadeOut'" value="Fade Out" />
+                <input type="button" ng-click="myImgClass=''" value="Fade In" />
+                <input type="button" ng-click="myImgClass='shrink'" value="Shrink" />
+                <input type="button" ng-click="myImgClass='grow'" value="Grow" />
+                <hr />
+                <img ng-class="myImgClass" src="img/london.jpeg" />
+			</div>
+		</td>
+		<td>
+            <table class="table" border=1>
+                <tr>
+                    <td>Location</td>
+
+                    <td>{{myData.name}}, {{myData.country}}</td>
+                </tr>
+                <tr><td>Forecast</td>
+                    <td>
+                        {{myData.weather[0].description}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Temp</td>
+                    <td>
+                        {{(myData.main.temp - 273.15) * 1.8 + 32 | number:2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        high: {{(myData.main.temp_max - 273.15) * 1.8 + 32 | number:2}}  low: {{(myData.main.temp_min - 273.15) * 1.8 + 32 | number:2}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cloudiness </td>
+                    <td>
+                        {{myData.clouds.all}}  %
+                    </td>
+                </tr>
+                <tr>
+                    <td>Humidity </td>
+                    <td>
+                        {{myData.main.humidity}}  %
+                    </td>
+                </tr>
+                <tr>
+                    <td>Wind</td>
+                    <td>
+                        sp: {{myData.wind.speed}}  dir: {{myData.wind.deg}}
+                    </td>
+                </tr>
+                <tr>
+                    <td>Wind</td>
+                    <td>
+                        lat: {{myData.coord.lat}}  lon: {{myData.coord.lon}}
+                    </td>
+                </tr>
+            </table>
+		</td>
+	</tr>
+</table>
+
+
+
+
+

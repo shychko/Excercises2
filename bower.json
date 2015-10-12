@@ -1,0 +1,22 @@
+{
+  "name": "Exercises",
+  "version": "0.0.0",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node",
+    "yui"
+  ],
+  "authors": [
+    "Serge Hychko"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

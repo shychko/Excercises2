@@ -1,0 +1,11 @@
+<div class="row">
+    Name:
+    <span ng-bind="groceryData.name">
+    </span>
+    Price:
+    <span ng-bind="groceryData.price | currency">
+    </span>
+    Sale Amount:
+    <span ng-bind="getSale(groceryData) + '%'">
+    </span>
+</div>

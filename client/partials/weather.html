@@ -1,0 +1,67 @@
+
+
+
+<div class="banner">
+	<img src="img/weather.jpg"/>
+</div>
+
+<h1>Select your city by zipcode for weather report.</h1>
+
+<input type="text" id="zip" ng-model = zip />
+<button ng-click="getWithZip(zip)" type="submit" onClick="document.getElementById('tablediv').style.display='inline';"><img src="img/button.jpg" height=28/> </button>
+</form>
+<div id="tablediv" name="tablediv" style="display:none">
+	<table class="table" border=1>
+		<tr>
+			<td>Location</td>
+	    		
+			<td>City Name:{{myData.name}}, City Id:{{myData.id}}</td>
+		</tr>
+		<tr><td>Forecast</td>
+			<td>
+	    		{{myData.weather[0].description}}
+			</td>
+		</tr>
+		<tr>
+			<td>Temp</td>
+			<td>
+				{{(myData.main.temp - 273.15) * 1.8 + 32 | number:2}}
+			</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td>
+	    		high: {{(myData.main.temp_max - 273.15) * 1.8 + 32 | number:2}}  low: {{(myData.main.temp_min - 273.15) * 1.8 + 32 | number:2}}
+			</td>
+		</tr>
+		<tr>
+			<td>Cloudiness </td>
+			<td>
+	    		{{myData.clouds.all}}  %
+			</td>
+		</tr>
+		<tr>
+			<td>Humidity </td>
+			<td>
+	    		{{myData.main.humidity}}  %
+			</td>
+		</tr>
+		<tr>
+			<td>Wind</td>
+			<td>
+	    		sp: {{myData.wind.speed}}  dir: {{myData.wind.deg}}
+			</td>
+		</tr>
+		<tr>
+			<td>Wind</td>
+			<td>
+	    		lat: {{myData.coord.lat}}  lon: {{myData.coord.lon}}
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+
+
+
